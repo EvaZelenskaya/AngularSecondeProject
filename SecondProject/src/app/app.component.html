@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title></title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"/>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+</head>
+<body>
+<h1 style="text-align: center">TAXI</h1>
+
+
+<div class="card" style="background: aliceblue">
+    <h3 >The first case</h3>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor = "let item of taxiList">
+        <td>{{item.name}}</td>
+        <td><span>{{item.age}}</span></td>
+      </tr>
+      </tbody>
+    </table>
+  <form [formGroup]="userForm">
+    <div class="">
+            <div class="">
+        <div class="">
+          <div class="">
+            <label>Name</label>
+          </div>
+          <div class="" >
+            <div class="">
+              <input type="text" [formControl]="$any(userForm).controls['name']" class="form-control" placeholder="name">
+            </div>
+          </div>
+        </div>
+        <div class=" ">
+          <div class=" " >
+            <label>Age</label>
+          </div>
+          <div class="">
+            <div class="">
+              <input type="text" [formControl]="$any(userForm).controls['age']" class="form-control" placeholder="age">
+            </div>
+          </div>
+        </div>
+        <div class=" ">
+          <div class=""></div>
+          <button type="button" class="btn btn-primary" (click)="addItem()">Add</button>&nbsp;
+        </div>
+      </div>
+    </div>
+  </form>
+  <hr>
+</div>
+
+<div class="card" style="background: lightgray">
+  <h3 >The second case</h3>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Batya</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let item of resultTwo">
+      <td>{{item.name}}</td>
+      <td><span>{{item.age}}</span></td>
+      <td><span>{{item.batya ? 'true ' : 'false'}}</span></td>
+
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="card" style="background: lightpink">
+  <h3 >The third case</h3>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Batya</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let item of result">
+      <td><span>{{item.name}}</span></td>
+      <td><span>{{item.age}}</span></td>
+      <td><span>{{item.batya ? 'true ' : 'false'}}</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
